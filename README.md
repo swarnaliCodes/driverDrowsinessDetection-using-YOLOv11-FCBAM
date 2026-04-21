@@ -66,3 +66,57 @@ Drowsiness Score
       If the score exceeds a threshold
       And remains stable for a fixed duration
       → A warning alert is triggered
+
+Requirements
+
+    Install dependencies:
+    
+        pip install ultralytics opencv-python
+
+Usage
+
+    Place your trained model (best.pt) in the project directory
+    
+    Run the script:
+    
+        python scripts/realtime.py
+        Press q to exit the application
+
+| Parameter              | Description                        | Default |
+| ---------------------- | ---------------------------------- | ------- |
+| WINDOW_SIZE            | Number of frames in sliding window | 120     |
+| FPS_ASSUMED            | Estimated frames per second        | 30      |
+| W_PERCLOS              | Weight for eye closure             | 0.7     |
+| W_YAWN                 | Weight for yawning                 | 0.3     |
+| DROWSY_SCORE_THRESHOLD | Detection threshold                | 0.5     |
+| STABILITY_SECONDS      | Required duration above threshold  | 2       |
+
+
+Output
+
+    Live video feed with detection bounding boxes
+    
+    Real-time status:
+        
+        ALERT
+        
+        MONITORING
+    
+        DROWSY
+    
+    Display of computed metrics:
+    
+        PERCLOS
+        
+        Yawn rate
+        
+        Drowsiness score
+
+Notes
+
+    Designed for controlled lighting conditions for optimal performance
+    
+    Accuracy depends on model quality and dataset
+    
+    Windows-specific alert uses winsound
+
