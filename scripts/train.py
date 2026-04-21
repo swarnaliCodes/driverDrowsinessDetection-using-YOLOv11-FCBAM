@@ -1,21 +1,24 @@
-from ultralytics import YOLO
-import torch
+model.train(
+    data="data/data.yaml",
+    epochs=150,
+    imgsz=640,
+    batch=16,
+    optimizer='AdamW',
+    lr0=0.001,
+    cos_lr=True,
+    device=device,
 
-def train():
-    device = "cuda" if torch.cuda.is_available() else "cpu"
-
-    model = YOLO("configs/yolov11s_fcbam.yaml")
-
-    model.train(
-        data="data/data.yaml",
-        epochs=150,
-        imgsz=640,
-        batch=16,
-        optimizer='AdamW',
-        lr0=0.001,
-        cos_lr=True,
-        device=device
-    )
-
-if __name__ == "__main__":
-    train()
+    hsv_h=0.015,
+    hsv_s=0.7,
+    hsv_v=0.4,
+    degrees=10,
+    translate=0.1,
+    scale=0.5,
+    shear=2.0,
+    perspective=0.0005,
+    flipud=0.0,
+    fliplr=0.5,
+    mosaic=1.0,
+    mixup=0.2,
+    close_mosaic=15,
+)
