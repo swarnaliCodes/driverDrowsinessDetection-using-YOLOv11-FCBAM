@@ -1,5 +1,8 @@
 ## Real-Time Driver Drowsiness Detection
 
+## Demo
+![Demo](demo/demo.gif)
+
 ### Overview
 This module implements a real-time driver drowsiness detection system using a trained YOLO-based model. It processes live webcam input to detect signs of fatigue such as eye closure and yawning, and computes a drowsiness score based on temporal patterns.
 
@@ -109,8 +112,6 @@ python scripts/realtime.py
 - Windows-specific alert uses `winsound`  
 
 ---
-
-### Demo
 
 
 
